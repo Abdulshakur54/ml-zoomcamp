@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 636,
    "id": "6b253f63-2249-4cdf-bd83-a3b6af20963a",
    "metadata": {},
    "outputs": [
@@ -216,7 +216,7 @@
        "[5 rows x 21 columns]"
       ]
      },
-     "execution_count": 1,
+     "execution_count": 636,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -232,7 +232,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 637,
    "id": "1e7cac53-c3dc-43ca-96a3-186fc4deec01",
    "metadata": {},
    "outputs": [],
@@ -242,7 +242,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 638,
    "id": "f6aefe82-2da2-4232-b956-0a75802f9d2c",
    "metadata": {},
    "outputs": [],
@@ -252,7 +252,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 639,
    "id": "76725752-3f13-42b2-899d-3cb64703a8ff",
    "metadata": {},
    "outputs": [],
@@ -264,7 +264,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 640,
    "id": "f5be0ef7-4a04-4237-b31d-5011f6d3b2d0",
    "metadata": {},
    "outputs": [
@@ -295,7 +295,7 @@
        "dtype: int64"
       ]
      },
-     "execution_count": 5,
+     "execution_count": 640,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -308,7 +308,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 641,
    "id": "575cf098-9fff-4979-8101-ab30cd741b9b",
    "metadata": {},
    "outputs": [
@@ -329,7 +329,7 @@
        "Name: churn, Length: 7043, dtype: object"
       ]
      },
-     "execution_count": 6,
+     "execution_count": 641,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -340,7 +340,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 642,
    "id": "dbd883e7-0530-442c-a462-2237c5167c2e",
    "metadata": {},
    "outputs": [],
@@ -358,7 +358,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 643,
    "id": "ec54479b-a08f-4c69-8057-77c60df3f23f",
    "metadata": {},
    "outputs": [],
@@ -381,10 +381,7 @@
     "df_test = df_test.reset_index(drop=True)\n",
     "y_train = df_train.churn\n",
     "y_val = df_val.churn\n",
-    "y_test = df_test.churn\n",
-    "df_train = df_train[fields]\n",
-    "df_val = df_val[fields]\n",
-    "df_test = df_test[fields]"
+    "y_test = df_test.churn"
    ]
   },
   {
@@ -397,14 +394,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 644,
    "id": "155bda40-72f2-479a-8d7c-f7cd50498c8e",
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/html": [
-       "<style>#sk-container-id-1 {\n",
+       "<style>#sk-container-id-18 {\n",
        "  /* Definition of color scheme common for light and dark mode */\n",
        "  --sklearn-color-text: #000;\n",
        "  --sklearn-color-text-muted: #666;\n",
@@ -435,15 +432,15 @@
        "  }\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 {\n",
+       "#sk-container-id-18 {\n",
        "  color: var(--sklearn-color-text);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 pre {\n",
+       "#sk-container-id-18 pre {\n",
        "  padding: 0;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 input.sk-hidden--visually {\n",
+       "#sk-container-id-18 input.sk-hidden--visually {\n",
        "  border: 0;\n",
        "  clip: rect(1px 1px 1px 1px);\n",
        "  clip: rect(1px, 1px, 1px, 1px);\n",
@@ -455,7 +452,7 @@
        "  width: 1px;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-dashed-wrapped {\n",
+       "#sk-container-id-18 div.sk-dashed-wrapped {\n",
        "  border: 1px dashed var(--sklearn-color-line);\n",
        "  margin: 0 0.4em 0.5em 0.4em;\n",
        "  box-sizing: border-box;\n",
@@ -463,7 +460,7 @@
        "  background-color: var(--sklearn-color-background);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-container {\n",
+       "#sk-container-id-18 div.sk-container {\n",
        "  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`\n",
        "     but bootstrap.min.css set `[hidden] { display: none !important; }`\n",
        "     so we also need the `!important` here to be able to override the\n",
@@ -473,7 +470,7 @@
        "  position: relative;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-text-repr-fallback {\n",
+       "#sk-container-id-18 div.sk-text-repr-fallback {\n",
        "  display: none;\n",
        "}\n",
        "\n",
@@ -489,14 +486,14 @@
        "\n",
        "/* Parallel-specific style estimator block */\n",
        "\n",
-       "#sk-container-id-1 div.sk-parallel-item::after {\n",
+       "#sk-container-id-18 div.sk-parallel-item::after {\n",
        "  content: \"\";\n",
        "  width: 100%;\n",
        "  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);\n",
        "  flex-grow: 1;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-parallel {\n",
+       "#sk-container-id-18 div.sk-parallel {\n",
        "  display: flex;\n",
        "  align-items: stretch;\n",
        "  justify-content: center;\n",
@@ -504,28 +501,28 @@
        "  position: relative;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-parallel-item {\n",
+       "#sk-container-id-18 div.sk-parallel-item {\n",
        "  display: flex;\n",
        "  flex-direction: column;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-parallel-item:first-child::after {\n",
+       "#sk-container-id-18 div.sk-parallel-item:first-child::after {\n",
        "  align-self: flex-end;\n",
        "  width: 50%;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-parallel-item:last-child::after {\n",
+       "#sk-container-id-18 div.sk-parallel-item:last-child::after {\n",
        "  align-self: flex-start;\n",
        "  width: 50%;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-parallel-item:only-child::after {\n",
+       "#sk-container-id-18 div.sk-parallel-item:only-child::after {\n",
        "  width: 0;\n",
        "}\n",
        "\n",
        "/* Serial-specific style estimator block */\n",
        "\n",
-       "#sk-container-id-1 div.sk-serial {\n",
+       "#sk-container-id-18 div.sk-serial {\n",
        "  display: flex;\n",
        "  flex-direction: column;\n",
        "  align-items: center;\n",
@@ -543,14 +540,14 @@
        "\n",
        "/* Pipeline and ColumnTransformer style (default) */\n",
        "\n",
-       "#sk-container-id-1 div.sk-toggleable {\n",
+       "#sk-container-id-18 div.sk-toggleable {\n",
        "  /* Default theme specific background. It is overwritten whether we have a\n",
        "  specific estimator or a Pipeline/ColumnTransformer */\n",
        "  background-color: var(--sklearn-color-background);\n",
        "}\n",
        "\n",
        "/* Toggleable label */\n",
-       "#sk-container-id-1 label.sk-toggleable__label {\n",
+       "#sk-container-id-18 label.sk-toggleable__label {\n",
        "  cursor: pointer;\n",
        "  display: flex;\n",
        "  width: 100%;\n",
@@ -563,13 +560,13 @@
        "  gap: 0.5em;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 label.sk-toggleable__label .caption {\n",
+       "#sk-container-id-18 label.sk-toggleable__label .caption {\n",
        "  font-size: 0.6rem;\n",
        "  font-weight: lighter;\n",
        "  color: var(--sklearn-color-text-muted);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 label.sk-toggleable__label-arrow:before {\n",
+       "#sk-container-id-18 label.sk-toggleable__label-arrow:before {\n",
        "  /* Arrow on the left of the label */\n",
        "  content: \"▸\";\n",
        "  float: left;\n",
@@ -577,13 +574,13 @@
        "  color: var(--sklearn-color-icon);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {\n",
+       "#sk-container-id-18 label.sk-toggleable__label-arrow:hover:before {\n",
        "  color: var(--sklearn-color-text);\n",
        "}\n",
        "\n",
        "/* Toggleable content - dropdown */\n",
        "\n",
-       "#sk-container-id-1 div.sk-toggleable__content {\n",
+       "#sk-container-id-18 div.sk-toggleable__content {\n",
        "  max-height: 0;\n",
        "  max-width: 0;\n",
        "  overflow: hidden;\n",
@@ -592,12 +589,12 @@
        "  background-color: var(--sklearn-color-unfitted-level-0);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-toggleable__content.fitted {\n",
+       "#sk-container-id-18 div.sk-toggleable__content.fitted {\n",
        "  /* fitted */\n",
        "  background-color: var(--sklearn-color-fitted-level-0);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-toggleable__content pre {\n",
+       "#sk-container-id-18 div.sk-toggleable__content pre {\n",
        "  margin: 0.2em;\n",
        "  border-radius: 0.25em;\n",
        "  color: var(--sklearn-color-text);\n",
@@ -605,79 +602,79 @@
        "  background-color: var(--sklearn-color-unfitted-level-0);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-toggleable__content.fitted pre {\n",
+       "#sk-container-id-18 div.sk-toggleable__content.fitted pre {\n",
        "  /* unfitted */\n",
        "  background-color: var(--sklearn-color-fitted-level-0);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {\n",
+       "#sk-container-id-18 input.sk-toggleable__control:checked~div.sk-toggleable__content {\n",
        "  /* Expand drop-down */\n",
        "  max-height: 200px;\n",
        "  max-width: 100%;\n",
        "  overflow: auto;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {\n",
+       "#sk-container-id-18 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {\n",
        "  content: \"▾\";\n",
        "}\n",
        "\n",
        "/* Pipeline/ColumnTransformer-specific style */\n",
        "\n",
-       "#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
+       "#sk-container-id-18 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
        "  color: var(--sklearn-color-text);\n",
        "  background-color: var(--sklearn-color-unfitted-level-2);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
+       "#sk-container-id-18 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
        "  background-color: var(--sklearn-color-fitted-level-2);\n",
        "}\n",
        "\n",
        "/* Estimator-specific style */\n",
        "\n",
        "/* Colorize estimator box */\n",
-       "#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
+       "#sk-container-id-18 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
        "  /* unfitted */\n",
        "  background-color: var(--sklearn-color-unfitted-level-2);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
+       "#sk-container-id-18 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {\n",
        "  /* fitted */\n",
        "  background-color: var(--sklearn-color-fitted-level-2);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-label label.sk-toggleable__label,\n",
-       "#sk-container-id-1 div.sk-label label {\n",
+       "#sk-container-id-18 div.sk-label label.sk-toggleable__label,\n",
+       "#sk-container-id-18 div.sk-label label {\n",
        "  /* The background is the default theme color */\n",
        "  color: var(--sklearn-color-text-on-default-background);\n",
        "}\n",
        "\n",
        "/* On hover, darken the color of the background */\n",
-       "#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {\n",
+       "#sk-container-id-18 div.sk-label:hover label.sk-toggleable__label {\n",
        "  color: var(--sklearn-color-text);\n",
        "  background-color: var(--sklearn-color-unfitted-level-2);\n",
        "}\n",
        "\n",
        "/* Label box, darken color on hover, fitted */\n",
-       "#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {\n",
+       "#sk-container-id-18 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {\n",
        "  color: var(--sklearn-color-text);\n",
        "  background-color: var(--sklearn-color-fitted-level-2);\n",
        "}\n",
        "\n",
        "/* Estimator label */\n",
        "\n",
-       "#sk-container-id-1 div.sk-label label {\n",
+       "#sk-container-id-18 div.sk-label label {\n",
        "  font-family: monospace;\n",
        "  font-weight: bold;\n",
        "  display: inline-block;\n",
        "  line-height: 1.2em;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-label-container {\n",
+       "#sk-container-id-18 div.sk-label-container {\n",
        "  text-align: center;\n",
        "}\n",
        "\n",
        "/* Estimator-specific */\n",
-       "#sk-container-id-1 div.sk-estimator {\n",
+       "#sk-container-id-18 div.sk-estimator {\n",
        "  font-family: monospace;\n",
        "  border: 1px dotted var(--sklearn-color-border-box);\n",
        "  border-radius: 0.25em;\n",
@@ -687,18 +684,18 @@
        "  background-color: var(--sklearn-color-unfitted-level-0);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-estimator.fitted {\n",
+       "#sk-container-id-18 div.sk-estimator.fitted {\n",
        "  /* fitted */\n",
        "  background-color: var(--sklearn-color-fitted-level-0);\n",
        "}\n",
        "\n",
        "/* on hover */\n",
-       "#sk-container-id-1 div.sk-estimator:hover {\n",
+       "#sk-container-id-18 div.sk-estimator:hover {\n",
        "  /* unfitted */\n",
        "  background-color: var(--sklearn-color-unfitted-level-2);\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 div.sk-estimator.fitted:hover {\n",
+       "#sk-container-id-18 div.sk-estimator.fitted:hover {\n",
        "  /* fitted */\n",
        "  background-color: var(--sklearn-color-fitted-level-2);\n",
        "}\n",
@@ -786,7 +783,7 @@
        "\n",
        "/* \"?\"-specific style due to the `<a>` HTML tag */\n",
        "\n",
-       "#sk-container-id-1 a.estimator_doc_link {\n",
+       "#sk-container-id-18 a.estimator_doc_link {\n",
        "  float: right;\n",
        "  font-size: 1rem;\n",
        "  line-height: 1em;\n",
@@ -801,31 +798,31 @@
        "  border: var(--sklearn-color-unfitted-level-1) 1pt solid;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 a.estimator_doc_link.fitted {\n",
+       "#sk-container-id-18 a.estimator_doc_link.fitted {\n",
        "  /* fitted */\n",
        "  border: var(--sklearn-color-fitted-level-1) 1pt solid;\n",
        "  color: var(--sklearn-color-fitted-level-1);\n",
        "}\n",
        "\n",
        "/* On hover */\n",
-       "#sk-container-id-1 a.estimator_doc_link:hover {\n",
+       "#sk-container-id-18 a.estimator_doc_link:hover {\n",
        "  /* unfitted */\n",
        "  background-color: var(--sklearn-color-unfitted-level-3);\n",
        "  color: var(--sklearn-color-background);\n",
        "  text-decoration: none;\n",
        "}\n",
        "\n",
-       "#sk-container-id-1 a.estimator_doc_link.fitted:hover {\n",
+       "#sk-container-id-18 a.estimator_doc_link.fitted:hover {\n",
        "  /* fitted */\n",
        "  background-color: var(--sklearn-color-fitted-level-3);\n",
        "}\n",
-       "</style><div id=\"sk-container-id-1\" class=\"sk-top-container\"><div class=\"sk-text-repr-fallback\"><pre>LogisticRegression(C=1, max_iter=100000)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class=\"sk-container\" hidden><div class=\"sk-item\"><div class=\"sk-estimator fitted sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-1\" type=\"checkbox\" checked><label for=\"sk-estimator-id-1\" class=\"sk-toggleable__label fitted sk-toggleable__label-arrow\"><div><div>LogisticRegression</div></div><div><a class=\"sk-estimator-doc-link fitted\" rel=\"noreferrer\" target=\"_blank\" href=\"https://scikit-learn.org/1.6/modules/generated/sklearn.linear_model.LogisticRegression.html\">?<span>Documentation for LogisticRegression</span></a><span class=\"sk-estimator-doc-link fitted\">i<span>Fitted</span></span></div></label><div class=\"sk-toggleable__content fitted\"><pre>LogisticRegression(C=1, max_iter=100000)</pre></div> </div></div></div></div>"
+       "</style><div id=\"sk-container-id-18\" class=\"sk-top-container\"><div class=\"sk-text-repr-fallback\"><pre>LogisticRegression(C=1, max_iter=10000)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class=\"sk-container\" hidden><div class=\"sk-item\"><div class=\"sk-estimator fitted sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-18\" type=\"checkbox\" checked><label for=\"sk-estimator-id-18\" class=\"sk-toggleable__label fitted sk-toggleable__label-arrow\"><div><div>LogisticRegression</div></div><div><a class=\"sk-estimator-doc-link fitted\" rel=\"noreferrer\" target=\"_blank\" href=\"https://scikit-learn.org/1.6/modules/generated/sklearn.linear_model.LogisticRegression.html\">?<span>Documentation for LogisticRegression</span></a><span class=\"sk-estimator-doc-link fitted\">i<span>Fitted</span></span></div></label><div class=\"sk-toggleable__content fitted\"><pre>LogisticRegression(C=1, max_iter=10000)</pre></div> </div></div></div></div>"
       ],
       "text/plain": [
-       "LogisticRegression(C=1, max_iter=100000)"
+       "LogisticRegression(C=1, max_iter=10000)"
       ]
      },
-     "execution_count": 9,
+     "execution_count": 644,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -834,17 +831,17 @@
     "from sklearn.feature_extraction import DictVectorizer\n",
     "\n",
     "dv = DictVectorizer(sparse = False)\n",
-    "dict_train = df_train.to_dict(orient='records')\n",
+    "dict_train = df_train[fields].to_dict(orient='records')\n",
     "dv.fit(dict_train)\n",
     "X_train = dv.transform(dict_train)\n",
     "from sklearn.linear_model import LogisticRegression\n",
-    "model = LogisticRegression(max_iter=100000, C=1)\n",
+    "model = LogisticRegression(max_iter=10000, C=1)\n",
     "model.fit(X_train, y_train)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 645,
    "id": "1709373b-0ceb-4071-9300-1dc0826628e0",
    "metadata": {},
    "outputs": [
@@ -865,7 +862,7 @@
        "        3.95932211e-04])"
       ]
      },
-     "execution_count": 10,
+     "execution_count": 645,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -877,7 +874,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 646,
    "id": "95321511-d755-4139-918e-4d1ec4b0ed5b",
    "metadata": {},
    "outputs": [
@@ -887,7 +884,7 @@
        "np.float64(-0.045323382519725265)"
       ]
      },
-     "execution_count": 11,
+     "execution_count": 646,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -899,7 +896,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 647,
    "id": "9097c054-cad1-4e60-a75c-13b8beb3b091",
    "metadata": {},
    "outputs": [
@@ -909,13 +906,13 @@
        "np.float64(0.8055358410220014)"
       ]
      },
-     "execution_count": 12,
+     "execution_count": 647,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "dict_val = df_val.to_dict(orient='records')\n",
+    "dict_val = df_val[fields].to_dict(orient='records')\n",
     "X_val = dv.transform(dict_val)\n",
     "val_predict = (model.predict_proba(X_val)[:,1].round(2)) > 0.5\n",
     "(val_predict == y_val).mean()"
@@ -931,7 +928,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 648,
    "id": "9262d9b2-ff36-44d0-8860-bda449d13e59",
    "metadata": {},
    "outputs": [
@@ -941,7 +938,7 @@
        "np.float64(-0.12307907358470903)"
       ]
      },
-     "execution_count": 13,
+     "execution_count": 648,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -951,7 +948,7 @@
     "X_fulltrain = dv.transform(dict_fulltrain)\n",
     "y_fulltrain = df_fulltrain.churn.values\n",
     "C = 1\n",
-    "model = LogisticRegression(max_iter=100000, C=C)\n",
+    "model = LogisticRegression(max_iter=10000, C=C)\n",
     "model.fit(np.concatenate([X_train,X_val]), np.concatenate([y_train,y_val]))\n",
     "w = model.coef_[0]\n",
     "w0 = model.intercept_[0]\n",
@@ -960,7 +957,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 649,
    "id": "13f467bd-f8a5-40d9-8f60-3c4dd913b56e",
    "metadata": {},
    "outputs": [
@@ -970,13 +967,13 @@
        "np.float64(0.8105039034776437)"
       ]
      },
-     "execution_count": 14,
+     "execution_count": 649,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "dict_test = df_test.to_dict(orient='records')\n",
+    "dict_test = df_test[fields].to_dict(orient='records')\n",
     "X_test = dv.transform(dict_test)\n",
     "predict = (model.predict_proba(X_test)[:,1].round(2)) >= 0.5\n",
     "(predict == y_test).mean()"
@@ -992,7 +989,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 650,
    "id": "a475d9a8-0b64-4084-bf82-1119abcb68b5",
    "metadata": {},
    "outputs": [
@@ -1002,7 +999,7 @@
        "np.int64(212)"
       ]
      },
-     "execution_count": 15,
+     "execution_count": 650,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1014,7 +1011,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 651,
    "id": "77c5d68c-70bd-4ab6-b5ba-4565fefee898",
    "metadata": {},
    "outputs": [
@@ -1024,7 +1021,7 @@
        "np.int64(100)"
       ]
      },
-     "execution_count": 16,
+     "execution_count": 651,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1036,7 +1033,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 652,
    "id": "0354a304-1cf0-430f-9a98-288589a6c85c",
    "metadata": {},
    "outputs": [
@@ -1046,7 +1043,7 @@
        "np.int64(923)"
       ]
      },
-     "execution_count": 17,
+     "execution_count": 652,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1058,7 +1055,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 653,
    "id": "71c703a0-2072-4727-ac3f-01f8c8953d5f",
    "metadata": {},
    "outputs": [],
@@ -1068,7 +1065,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 654,
    "id": "ad13a7e0-93c9-4b05-b148-41ae22549693",
    "metadata": {},
    "outputs": [
@@ -1078,7 +1075,7 @@
        "np.int64(1409)"
       ]
      },
-     "execution_count": 19,
+     "execution_count": 654,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1089,7 +1086,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 655,
    "id": "85fa0f79-2e33-4037-bff4-3754821870c0",
    "metadata": {},
    "outputs": [
@@ -1099,7 +1096,7 @@
        "1409"
       ]
      },
-     "execution_count": 20,
+     "execution_count": 655,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1110,7 +1107,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 656,
    "id": "5bed1949-b5f0-4ede-b745-3d46fe00ba44",
    "metadata": {},
    "outputs": [
@@ -1121,7 +1118,7 @@
        "       [174, 212]])"
       ]
      },
-     "execution_count": 21,
+     "execution_count": 656,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1135,7 +1132,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 657,
    "id": "f9accef9-8235-48f1-8367-1ca85d3f9ac5",
    "metadata": {},
    "outputs": [
@@ -1146,7 +1143,7 @@
        "       [0.12, 0.15]])"
       ]
      },
-     "execution_count": 22,
+     "execution_count": 657,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1165,7 +1162,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 658,
    "id": "e43730c5-1473-44f1-ac6f-d607270d8543",
    "metadata": {},
    "outputs": [
@@ -1175,7 +1172,7 @@
        "np.float64(0.6794871794871795)"
       ]
      },
-     "execution_count": 23,
+     "execution_count": 658,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1187,7 +1184,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 659,
    "id": "9f5aa7b4-1607-428c-9f3c-1f0d11586c1a",
    "metadata": {},
    "outputs": [
@@ -1197,7 +1194,7 @@
        "np.float64(0.5492227979274611)"
       ]
      },
-     "execution_count": 24,
+     "execution_count": 659,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1217,7 +1214,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 660,
    "id": "00419202-37e0-4d79-abe0-b6fd84a4c73b",
    "metadata": {},
    "outputs": [],
@@ -1243,7 +1240,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 661,
    "id": "11248bbd-4197-465c-bf00-a8c5725865f0",
    "metadata": {},
    "outputs": [
@@ -1410,7 +1407,7 @@
        "[101 rows x 7 columns]"
       ]
      },
-     "execution_count": 26,
+     "execution_count": 661,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1424,7 +1421,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 662,
    "id": "3bf413a3-8486-4528-8c50-4e40b2c8b30e",
    "metadata": {},
    "outputs": [
@@ -1434,7 +1431,7 @@
        "Text(0.5, 1.0, 'ROC Curve for our Model')"
       ]
      },
-     "execution_count": 27,
+     "execution_count": 662,
      "metadata": {},
      "output_type": "execute_result"
     },
@@ -1456,7 +1453,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 663,
    "id": "8e4b4520-5cf7-4a69-a955-32ecb44df84c",
    "metadata": {},
    "outputs": [
@@ -1623,7 +1620,7 @@
        "[101 rows x 7 columns]"
       ]
      },
-     "execution_count": 28,
+     "execution_count": 663,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1638,7 +1635,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 664,
    "id": "8408eb1e-1ee0-4a74-9091-64a06e3578a9",
    "metadata": {},
    "outputs": [
@@ -1648,7 +1645,7 @@
        "Text(0.5, 1.0, 'ROC Curve for a random model')"
       ]
      },
-     "execution_count": 29,
+     "execution_count": 664,
      "metadata": {},
      "output_type": "execute_result"
     },
@@ -1670,7 +1667,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 665,
    "id": "c665c54b-b18c-490c-a903-a31ddd2138ed",
    "metadata": {},
    "outputs": [
@@ -1680,7 +1677,7 @@
        "(np.int64(386), np.int64(1023))"
       ]
      },
-     "execution_count": 30,
+     "execution_count": 665,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1693,7 +1690,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 666,
    "id": "588d7f97-c549-40dd-926b-d9b38d409eb9",
    "metadata": {},
    "outputs": [],
@@ -1703,7 +1700,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 667,
    "id": "26666d51-a68f-4e6b-9e31-124849fb849a",
    "metadata": {},
    "outputs": [],
@@ -1715,7 +1712,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 33,
+   "execution_count": 668,
    "id": "e719a54b-5e51-4efa-b3d6-478de4807e2c",
    "metadata": {},
    "outputs": [
@@ -1725,7 +1722,7 @@
        "Text(0.5, 1.0, 'ROC Curve for a the ideal model')"
       ]
      },
-     "execution_count": 33,
+     "execution_count": 668,
      "metadata": {},
      "output_type": "execute_result"
     },
@@ -1755,17 +1752,17 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 34,
+   "execution_count": 669,
    "id": "e7d91396-79e9-4d3c-9c85-e30a42ad9e42",
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "<matplotlib.legend.Legend at 0x7f083f9a6720>"
+       "<matplotlib.legend.Legend at 0x71ab943db3b0>"
       ]
      },
-     "execution_count": 34,
+     "execution_count": 669,
      "metadata": {},
      "output_type": "execute_result"
     },
@@ -1799,7 +1796,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 670,
    "id": "c9cc3d72-9886-464f-be6d-377c8b0139e5",
    "metadata": {},
    "outputs": [],
@@ -1825,7 +1822,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 36,
+   "execution_count": 671,
    "id": "ce9417d0-9dd8-49b1-afc5-ceb57b2ad638",
    "metadata": {},
    "outputs": [],
@@ -1837,7 +1834,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 37,
+   "execution_count": 672,
    "id": "da8c746c-10b5-42d5-999f-31840687da4c",
    "metadata": {},
    "outputs": [],
@@ -1850,17 +1847,17 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 38,
+   "execution_count": 673,
    "id": "f5c1d3bf-9399-4887-bd4a-16a799e79a39",
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "<matplotlib.legend.Legend at 0x7f083afe8fe0>"
+       "<matplotlib.legend.Legend at 0x71ab977ab830>"
       ]
      },
-     "execution_count": 38,
+     "execution_count": 673,
      "metadata": {},
      "output_type": "execute_result"
     },
@@ -1894,7 +1891,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 39,
+   "execution_count": 674,
    "id": "eb418b4a-cefd-478e-a092-4db75ff68382",
    "metadata": {},
    "outputs": [
@@ -1906,7 +1903,7 @@
        " np.float64(1.0))"
       ]
      },
-     "execution_count": 39,
+     "execution_count": 674,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1929,7 +1926,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 40,
+   "execution_count": 675,
    "id": "d74fc8e0-00ce-4f03-bd0c-8be9ef6287ae",
    "metadata": {},
    "outputs": [
@@ -1941,7 +1938,7 @@
        " np.float64(1.0))"
       ]
      },
-     "execution_count": 40,
+     "execution_count": 675,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1955,9 +1952,170 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "548a8c3a-e382-4e15-b7d4-e115ba48b98d",
+   "metadata": {},
+   "source": [
+    "## Week 5 Saving and Loading our Model"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 676,
+   "id": "cac410d0-d10c-4832-ac6f-d61c1f8fcd1b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pickle"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 677,
+   "id": "cdadb997-660b-42fe-8bce-2b4ae15baae4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "C = 1.0\n",
+    "filename = f\"model_C={C}.bin\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 678,
+   "id": "9663a495-3681-4582-8e45-40c1a6cb4bf8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with open(filename, 'wb') as file:\n",
+    "    pickle.dump((dv, model), file)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c303af89-31a2-4cf8-8b71-4e785cac3aac",
+   "metadata": {},
+   "source": [
+    "### Loading our Model"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 679,
+   "id": "a210024d-0bd3-43e4-b9d3-0f091976c675",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pickle\n",
+    "C = 1.0\n",
+    "filename = f\"model_C={C}.bin\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 680,
+   "id": "a28bd33d-5709-4242-9681-79c18b2b1b24",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(DictVectorizer(sparse=False), LogisticRegression(C=1, max_iter=10000))"
+      ]
+     },
+     "execution_count": 680,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "with open(filename, 'rb') as fl:\n",
+    "    dv, model = pickle.load(fl)\n",
+    "dv, model"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 684,
+   "id": "19b488a4-99c6-4f48-a538-3228e1a41b2e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'customerid': '2898-mrkpi',\n",
+       " 'gender': 'male',\n",
+       " 'seniorcitizen': 0,\n",
+       " 'partner': 'yes',\n",
+       " 'dependents': 'yes',\n",
+       " 'tenure': 68,\n",
+       " 'phoneservice': 'yes',\n",
+       " 'multiplelines': 'yes',\n",
+       " 'internetservice': 'fiber_optic',\n",
+       " 'onlinesecurity': 'no',\n",
+       " 'onlinebackup': 'yes',\n",
+       " 'deviceprotection': 'no',\n",
+       " 'techsupport': 'no',\n",
+       " 'streamingtv': 'yes',\n",
+       " 'streamingmovies': 'yes',\n",
+       " 'contract': 'one_year',\n",
+       " 'paperlessbilling': 'yes',\n",
+       " 'paymentmethod': 'credit_card_(automatic)',\n",
+       " 'monthlycharges': 101.05,\n",
+       " 'totalcharges': 6770.5,\n",
+       " 'churn': 0}"
+      ]
+     },
+     "execution_count": 684,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "customer = df_test.loc[11].to_dict()\n",
+    "customer\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 685,
+   "id": "7f92f692-89a0-497f-9288-d827fe7716f9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = pd.DataFrame([customer])[fields]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 686,
+   "id": "859442f3-ddbe-4c53-b311-a9389bf44333",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "np.float64(0.17064380267633733)"
+      ]
+     },
+     "execution_count": 686,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_customer = pd.DataFrame([customer])[fields]\n",
+    "customer_dict = df_customer.to_dict(orient='records')[0]\n",
+    "customer_dict\n",
+    "X_customer = dv.transform(customer_dict)\n",
+    "X_customer\n",
+    "model.predict_proba(X_customer)[0,1]"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "4afff7fb-79c8-4a2d-a7a4-18fd803f6ec5",
+   "id": "70d72697-553e-44a3-bfb5-35270a3a9d8c",
    "metadata": {},
    "outputs": [],
    "source": []
